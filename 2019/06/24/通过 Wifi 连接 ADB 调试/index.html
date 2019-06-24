@@ -16,11 +16,11 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/111.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/222.png">
-<meta property="og:image" content="http://yoursite.com/333.png">
-<meta property="og:image" content="http://yoursite.com/444.png">
-<meta property="og:image" content="http://yoursite.com/555.png">
-<meta property="og:image" content="http://yoursite.com/666.png">
-<meta property="og:updated_time" content="2019-06-24T09:07:40.114Z">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/333.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/444.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/555.png">
+<meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/666.png">
+<meta property="og:updated_time" content="2019-06-24T09:09:50.950Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过 Wifi 连接 adb 调试">
 <meta name="twitter:description" content="今天写一写android的ADB手机无线调试方法，因为我的手机因为长时间测试插拔USB口已经被搞坏了。当然，这个方法百度上都由很多了，写下来巩固一下自己印象，希望也能帮到你。 步入正题，首先，确保你的手机和电脑在一个局域网内。即你的电脑可以通过ip+端口的形式访问到你的手机。当然  配置之前得先用手机USB连接上电脑，开启调试模式。 第一步，通过命令行打开adb。比如我的adb的目录是 F:\an">
@@ -108,23 +108,31 @@
 <p>接下来输入 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
 
-<p>![设备列表]<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/222.png"><br>会发现你的手机出现在了adb的连接列表里面</p>
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/222.png" title="设备列表">
+<p>会发现你的手机出现在了adb的连接列表里面</p>
 <p>下面打开你的手机的wifi设置，看看路由器给你手机分配的IP：</p>
-<p><img src="/333.png" alt="路由器分配给手机的 ip "></p>
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/333.png" title="路由器分配给手机的 ip">
+
+
 <p>然后 给你的手机通过命令行指定一个端口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb tcpip 5555</span><br></pre></td></tr></table></figure>
 
-<p><img src="/444.png" alt="指定端口"></p>
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/444.png" title="指定端口">
+
 <p>这样表示指定端口成功了。<br>接下来输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb connect  192.168.0.1//你手机在局域网中的ip</span><br></pre></td></tr></table></figure>
 
-<p><img src="/555.png" alt="连接上了设备"><br>到此就大功告成啦！ 接下来 拔下你的USB线 然后运行Demo</p>
-<p><img src="/666.png" alt="出现设备信息"><br> 就是这样！ 注意安全卫士可能会占用端口或者adb的服务  还有就是每次断开之后得插上usb线重新配置  不过在家的话 我感觉还是挺稳定。能少插两次就少插两次吧。</p>
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/555.png" title="连接上了设备">
+
+<p>到此就大功告成啦！ 接下来 拔下你的USB线 然后运行Demo</p>
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/666.png" title="出现设备信息">
+
+<p> 就是这样！ 注意安全卫士可能会占用端口或者adb的服务  还有就是每次断开之后得插上usb线重新配置  不过在家的话 我感觉还是挺稳定。能少插两次就少插两次吧。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/通过 Wifi 连接 ADB 调试/" data-id="cjxa5rdtl00006om4fiw0guod" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/通过 Wifi 连接 ADB 调试/" data-id="cjxa5ub5r0000twm449q58zzp" class="article-share-link">Share</a>
       
       
     </footer>
