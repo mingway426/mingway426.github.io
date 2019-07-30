@@ -241,7 +241,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-30 10:59:38" itemprop="dateModified" datetime="2019-07-30T10:59:38+08:00">2019-07-30</time>
+                <time title="Modified: 2019-07-30 11:00:52" itemprop="dateModified" datetime="2019-07-30T11:00:52+08:00">2019-07-30</time>
               </span>
             
           
@@ -264,30 +264,30 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f:   //进入F盘</span><br><span class="line">cd android\sdk\platform-tools //进入platform-tools目录下</span><br><span class="line">adb.exe  //启动adb</span><br></pre></td></tr></table></figure>
 
 <p>出现以下信息说明启动成功：</p>
-<div style="width: 100%; margin: auto">![打开adb](111.png)</div>
+<div style="width: 100%; margin: auto">![打开adb](111.png.png)</div>
 
 <p>接下来输入 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
 
-<div style="width: 100%; margin: auto">![device 列表]( 222.png)</div>
+<div style="width: 100%; margin: auto">![device 列表](222.png.png)</div>
 
 <p>会发现你的手机出现在了adb的连接列表里面</p>
 <p>下面打开你的手机的wifi设置，看看路由器给你手机分配的IP：</p>
-<div style="width: 100%; margin: auto">![路由器分配给手机的](333.png)</div>
+<div style="width: 100%; margin: auto">![路由器分配给手机的](333.png.png)</div>
 
 
 <p>然后 给你的手机通过命令行指定一个端口</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb tcpip 5555</span><br></pre></td></tr></table></figure>
 
-<div style="width: 100%; margin: auto">![指定端口](444.png)</div>
+<div style="width: 100%; margin: auto">![指定端口](444.png.png)</div>
 
 <p>这样表示指定端口成功了。<br>接下来输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb connect  192.168.0.1//你手机在局域网中的ip</span><br></pre></td></tr></table></figure>
 
-<div style="width: 100%; margin: auto">![连接上了设备](555.png)</div>
+<div style="width: 100%; margin: auto">![连接上了设备](555.png.png)</div>
 
 <p>到此就大功告成啦！ 接下来 拔下你的USB线 然后运行Demo</p>
-<div style="width: 100%; margin: auto">![出现设备信息](666.png)</div>
+<div style="width: 100%; margin: auto">![出现设备信息](666.png.png)</div>
 
 <p> 就是这样！ 注意安全卫士可能会占用端口或者adb的服务  还有就是每次断开之后得插上usb线重新配置  不过在家的话 我感觉还是挺稳定。能少插两次就少插两次吧。</p>
 
