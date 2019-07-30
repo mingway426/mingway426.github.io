@@ -65,12 +65,11 @@
 <meta property="og:description" content="今天写一写android的ADB手机无线调试方法，因为我的手机因为长时间测试插拔USB口已经被搞坏了。当然，这个方法百度上都由很多了，写下来巩固一下自己印象，希望也能帮到你。 步入正题，首先，确保你的手机和电脑在一个局域网内。即你的电脑可以通过ip+端口的形式访问到你的手机。当然  配置之前得先用手机USB连接上电脑，开启调试模式。 第一步，通过命令行打开adb。比如我的adb的目录是 F:\an">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/111.png">
-<meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/222.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/333.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/444.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/555.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/666.png">
-<meta property="og:updated_time" content="2019-06-24T09:09:50.950Z">
+<meta property="og:updated_time" content="2019-07-30T02:48:58.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通过 Wifi 连接 adb 调试">
 <meta name="twitter:description" content="今天写一写android的ADB手机无线调试方法，因为我的手机因为长时间测试插拔USB口已经被搞坏了。当然，这个方法百度上都由很多了，写下来巩固一下自己印象，希望也能帮到你。 步入正题，首先，确保你的手机和电脑在一个局域网内。即你的电脑可以通过ip+端口的形式访问到你的手机。当然  配置之前得先用手机USB连接上电脑，开启调试模式。 第一步，通过命令行打开adb。比如我的adb的目录是 F:\an">
@@ -235,11 +234,21 @@
                 
               
 
-              <time title="Created: 2019-06-24 16:51:35 / Modified: 17:09:50" itemprop="dateCreated datePublished" datetime="2019-06-24T16:51:35+08:00">2019-06-24</time>
+              <time title="Created: 2019-06-24 16:51:35" itemprop="dateCreated datePublished" datetime="2019-06-24T16:51:35+08:00">2019-06-24</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-30 10:48:58" itemprop="dateModified" datetime="2019-07-30T10:48:58+08:00">2019-07-30</time>
+              </span>
             
           
 
@@ -260,12 +269,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f:   //进入F盘</span><br><span class="line">cd android\sdk\platform-tools //进入platform-tools目录下</span><br><span class="line">adb.exe  //启动adb</span><br></pre></td></tr></table></figure>
 
 <p>出现以下信息说明启动成功：</p>
-<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/111.png" title="打开adb">
-
-<p>接下来输入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
-
-<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/222.png" title="设备列表">
+<img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/111.png" title="打开adb % = 300x400} 接下来输入 undefined {% asset_img 222.png 设备列表">
 <p>会发现你的手机出现在了adb的连接列表里面</p>
 <p>下面打开你的手机的wifi设置，看看路由器给你手机分配的IP：</p>
 <img src="/2019/06/24/通过%20Wifi%20连接%20ADB%20调试/333.png" title="路由器分配给手机的 ip">
