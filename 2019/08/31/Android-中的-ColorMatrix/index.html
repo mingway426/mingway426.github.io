@@ -57,17 +57,17 @@
   };
 </script>
 
-  <meta name="description" content="description">
+  <meta name="description" content="ColorMatrix 是 Android SDK 中一个处理 Bitmap 颜色通道的工具类，之前工作中有用到过。 官方文档：https://developer.android.com/reference/android/graphics/ColorMatrix (需要科学上网) ColorMatrix 可以用来处理图片的 RGB 通道相关值，以及图片的透明度 Aphla 的值，它的参数是一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 中的 ColorMatrix">
 <meta property="og:url" content="http://yoursite.com/2019/08/31/Android-中的-ColorMatrix/index.html">
 <meta property="og:site_name" content="小黑屋">
-<meta property="og:description" content="description">
+<meta property="og:description" content="ColorMatrix 是 Android SDK 中一个处理 Bitmap 颜色通道的工具类，之前工作中有用到过。 官方文档：https://developer.android.com/reference/android/graphics/ColorMatrix (需要科学上网) ColorMatrix 可以用来处理图片的 RGB 通道相关值，以及图片的透明度 Aphla 的值，它的参数是一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T06:34:24.825Z">
+<meta property="og:updated_time" content="2019-08-31T07:53:21.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 中的 ColorMatrix">
-<meta name="twitter:description" content="description">
+<meta name="twitter:description" content="ColorMatrix 是 Android SDK 中一个处理 Bitmap 颜色通道的工具类，之前工作中有用到过。 官方文档：https://developer.android.com/reference/android/graphics/ColorMatrix (需要科学上网) ColorMatrix 可以用来处理图片的 RGB 通道相关值，以及图片的透明度 Aphla 的值，它的参数是一个">
   <link rel="canonical" href="http://yoursite.com/2019/08/31/Android-中的-ColorMatrix/">
 
 
@@ -228,8 +228,12 @@
                 
               
 
-              <time title="Created: 2019-08-31 14:34:24" itemprop="dateCreated datePublished" datetime="2019-08-31T14:34:24+08:00">2019-08-31</time>
+              <time title="Created: 2019-08-31 14:34:24 / Modified: 15:53:21" itemprop="dateCreated datePublished" datetime="2019-08-31T14:34:24+08:00">2019-08-31</time>
             </span>
+          
+            
+
+            
           
 
           <br/>
@@ -243,7 +247,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>ColorMatrix 是 Android SDK 中一个处理 Bitmap 颜色通道的工具类，之前工作中有用到过。</p>
+<p><a href="https://developer.android.com/reference/android/graphics/ColorMatrix" target="_blank" rel="noopener">官方文档：https://developer.android.com/reference/android/graphics/ColorMatrix (需要科学上网)</a></p>
+<p>ColorMatrix 可以用来处理图片的 RGB 通道相关值，以及图片的透明度 Aphla 的值，它的参数是一个 4x5 的数组，当然我们在使用的时候可以通过数组传值。</p>
+<pre><code>[ a, b, c, d, e,
+f, g, h, i, j,
+k, l, m, n, o,
+p, q, r, s, t ]</code></pre><p>当转换成具体的颜色计算公式时如下所示：</p>
+<pre><code>R’ = a*R + b*G + c*B + d*A + e;
+G’ = f*R + g*G + h*B + i*A + j;
+B’ = k*R + l*G + m*B + n*A + o;
+A’ = p*R + q*G + r*B + s*A + t;</code></pre><p>每个颜色通道的取值范围是 0~255。</p>
+<p>在实际使用的时候，我们可以使用如下的实例代码控制不同的颜色通道来绘制你想要的效果：</p>
+<pre><code>private static void changeBitmapColorConfig(Bitmap source){
+    Canvas canvas = new Canvas(source);
+    Paint paint = new Paint();
+    ColorMatrix mCm = new ColorMatrix();
+    float aphla = 25;
+    float red_slope = 44/256f;
+    float green_slope = 62/256f;
+    float blue_slope = 89/256f;
+    mCm.set(new float[] { red_slope, 0, 0, 0, aphla,   //red vector
+                          0, green_slope, 0, 0, aphla, //green vector
+                          0, 0, blue_slope, 0, aphla,  //blue vector
+                          0, 0, 0, 1, 0 });             //alpha vector
+    paint.setColorFilter(new ColorMatrixColorFilter(mCm));
+    canvas.drawBitmap(source,0,0,paint);
+}</code></pre><p><a href="https://www.jianshu.com/p/9a44d04f39fc" target="_blank" rel="noopener">相关资料：https://www.jianshu.com/p/9a44d04f39fc</a></p>
+
     </div>
 
     
